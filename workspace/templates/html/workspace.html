@@ -1,0 +1,40 @@
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">-->
+<div class="seq_other row">
+        <div class="carousel" data-transition="slide">
+        {% for child in items %}
+        {% if child.0 == "img" %}
+            <div>
+                <img src="{{ child.1 }}"  width="{{ child.2 }}" height="{{ child.3 }}">
+            </div>
+        {% endif %}
+        {% if child.0 == "video" %}
+            <div>
+                <video id="vid{{ forloop.counter }}" class="video-js vjs-default-skin" width="{{ child.2 }}"  height="{{ child.3 }}" >
+                </video>
+                <script>
+                    videojs(document.getElementsByClassName("video-js")[0], {
+                        controls: true,
+                        preload: "auto",
+                        techOrder: ["youtube"],
+                        src: "{{ child.1 }}"
+                        }, function(){
+                    });
+                </script>
+            </div>
+        {% endif %}
+        {% if child.0 == "doc" %}
+            <div>
+                <object data="http://docs.google.com/viewer?url={{ child.1|urlencode:"" }}&embedded=true" width="{{ child.2 }}" height="{{ child.3 }}" style="border: none;"></object>
+            </div>
+        {% endif %}
+        {% endfor %}
+        <div><h3>{{ student }}</h3></div>
+        </div>
+        <div>
+            {% if url %}
+            <iframe src="{{ url }}" width="100%" height="625px"></iframe>
+            {% else %}
+            <h3>Worspace</h3>
+            {% endif %}
+        </div>
+</div>
