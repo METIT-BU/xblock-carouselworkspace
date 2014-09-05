@@ -21,9 +21,9 @@ class WorkspaceBlock(XBlock):
     )
 
     data = List(help="This is the representation of the data items as a list of tuples ",
-                default=[('img', 'http://met-content.bu.edu/etr2/content/images/Slide1.JPG', '100%', '625'),
-                         ('img', 'http://met-content.bu.edu/etr2/content/images/Slide2.JPG', '100%', '625'),
-                         ('img', 'http://met-content.bu.edu/etr2/content/images/Slide3.JPG', '100%', '625'),
+                default=[('img', 'http://met-content.bu.edu/etr2/content/images/Slide5.JPG', '100%', '625'),
+                         ('img', 'http://met-content.bu.edu/etr2/content/images/Slide6.JPG', '100%', '625'),
+                         ('img', 'http://met-content.bu.edu/etr2/content/images/Slide7.JPG', '100%', '625'),
                          ('video', 'http://www.youtube.com/watch?v=7uHeNryKUWk', '100%', '625'),
                          ('doc', 'http://www.bu.edu/met-eti/files/2013/03/Final_VirtualLaboratoriesForLearning.pdf',
                           '100%', '625')],
